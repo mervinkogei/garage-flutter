@@ -1,5 +1,6 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:garage/pages/google_map_screen.dart';
 
 
 void main() {
@@ -139,14 +140,26 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           //Image Carousel
           image_carousel,
-          //Padding
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text('Categories',
-                style: TextStyle(fontWeight: FontWeight.bold)),
+        
+          Container(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Google Map Demo', style: TextStyle(fontSize: 24.0),)
+                ],
+              ),
+            ),
           ),
+          
+          
+
         ],
-        )
+        ),
+         floatingActionButton: FloatingActionButton(
+             onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=> GoogleMapScreen())),
+           tooltip: 'Google Maps',
+           child: Icon(Icons.pin_drop_outlined),backgroundColor: Colors.redAccent,)
       
     );
   }
