@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   carousel_pro: ^1.0.0
   google_maps_flutter: ^1.2.0
-  firebase_auth: ^0.20.1
+  # firebase_auth: 0.7.0
   flutter_signin_button: ^1.1.0
 
 dev_dependencies:

@@ -1,12 +1,20 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:garage/components/locations.dart';
+// import 'package:garage/login.dart';
+import 'package:garage/pages/about.dart';
+import 'package:garage/pages/category.dart';
 import 'package:garage/pages/google_map_screen.dart';
+import 'package:garage/pages/my_account.dart';
+import 'package:garage/pages/payment.dart';
+import 'package:garage/pages/settings.dart';
+import 'package:garage/start.dart';
 
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: HomePage(),
+    home: Start(),
   ));
 }
 
@@ -16,6 +24,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  
   @override
   Widget build(BuildContext context) {
     Widget image_carousel = Container(
@@ -62,8 +71,8 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: ListView(children: [
             UserAccountsDrawerHeader(
-              accountName: Text('Vincent'),
-              accountEmail: Text('vincent@moovn.com'),
+              accountName: Text('Lydiah'),
+              accountEmail: Text('lydiah@gmail.com'),
               currentAccountPicture: GestureDetector(
                 child: CircleAvatar(
                   backgroundColor: Colors.grey,
@@ -84,17 +93,17 @@ class _HomePageState extends State<HomePage> {
           ),
 
           InkWell(
-            onTap: () {},
+             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Location())),
             child: ListTile(
-              title: Text('My Account',style: TextStyle(color: Colors.blueAccent)),
+              title: Text('Locations',style: TextStyle(color: Colors.blueAccent)),
               leading: Icon(
-                Icons.person, color: Colors.redAccent,
+                Icons.location_city, color: Colors.redAccent,
               ),
           )
           ),
 
           InkWell(
-            onTap: () {},
+             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Category())),
             child: ListTile(
               title: Text('Category',style: TextStyle(color: Colors.blueAccent),),
               leading: Icon(
@@ -104,7 +113,7 @@ class _HomePageState extends State<HomePage> {
           ),
 
           InkWell(
-            onTap: () {},
+             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment())),
             child: ListTile(
               title: Text('Payment',style: TextStyle(color: Colors.blueAccent)),
               leading: Icon(
@@ -115,7 +124,7 @@ class _HomePageState extends State<HomePage> {
            Divider(),
 
           InkWell(
-            onTap: () {},
+             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Settings())),
             child: ListTile(
               title: Text('Settings'),
               leading: Icon(
@@ -125,7 +134,7 @@ class _HomePageState extends State<HomePage> {
           ),
 
           InkWell(
-            onTap: () {},
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>About())),
             child: ListTile(
               title: Text('About'),
               leading: Icon(
@@ -140,21 +149,28 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           //Image Carousel
           image_carousel,
+
+           SizedBox(height: 20.0),
         
           Container(
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Google Map Demo', style: TextStyle(fontSize: 24.0),)
+                  Text('Our Garage Locations', style: TextStyle(fontSize: 20.0),)
                 ],
               ),
             ),
           ),
-          
-          
 
-        ],
+          SizedBox(height: 20.0),
+
+           Container(
+            height: 320.0,
+            child: Location(),
+          ),
+          
+          ],
         ),
          floatingActionButton: FloatingActionButton(
              onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=> GoogleMapScreen())),

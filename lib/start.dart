@@ -2,6 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:garage/main.dart';
+// import 'package:garage/login.dart';
+// import 'package:garage/main.dart';
 
 class Start extends StatefulWidget {
   @override
@@ -48,7 +51,8 @@ class _StartState extends State<Start> {
                  children: [
                  RaisedButton(
                     padding: EdgeInsets.only(left: 30.0, right: 30.0),
-                   onPressed: () {},
+                   onPressed: ()=> Navigator.push(context, 
+                   MaterialPageRoute(builder: (context)=>HomePage())),
                  child: Text('LOGIN', style: TextStyle(fontSize: 20.0, 
                  fontWeight: FontWeight.bold, color: Colors.white),
                  ),
