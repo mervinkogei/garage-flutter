@@ -4,10 +4,12 @@ import 'package:garage/components/locations.dart';
 // import 'package:garage/login.dart';
 import 'package:garage/pages/about.dart';
 import 'package:garage/pages/category.dart';
+// import 'package:garage/pages/check_list.dart';
 import 'package:garage/pages/google_map_screen.dart';
-import 'package:garage/pages/my_account.dart';
+// import 'package:garage/pages/my_account.dart';
 import 'package:garage/pages/payment.dart';
-import 'package:garage/pages/settings.dart';
+import 'package:garage/pages/test_checklist.dart';
+// import 'package:garage/pages/settings.dart';
 import 'package:garage/start.dart';
 
 
@@ -124,9 +126,9 @@ class _HomePageState extends State<HomePage> {
            Divider(),
 
           InkWell(
-             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Settings())),
+             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckBoxListTileDemo())),
             child: ListTile(
-              title: Text('Settings'),
+              title: Text('Services'),
               leading: Icon(
                 Icons.settings
               ),
@@ -134,11 +136,11 @@ class _HomePageState extends State<HomePage> {
           ),
 
           InkWell(
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>About())),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Start())),
             child: ListTile(
-              title: Text('About'),
+              title: Text('Logout'),
               leading: Icon(
-                Icons.help, color: Colors.blueAccent,
+                Icons.logout, color: Colors.blueAccent,
               ),
           )
           ),

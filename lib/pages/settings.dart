@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
-class Settings extends StatefulWidget {
+class Services extends StatefulWidget {
   @override
-  _SettingsState createState() => _SettingsState();
+  _ServicesState createState() => _ServicesState();
 }
 
-class _SettingsState extends State<Settings> {
+class _ServicesState extends State<Services> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: Text('Services'),
+        backgroundColor: Colors.redAccent,
       ),
     );
   }
