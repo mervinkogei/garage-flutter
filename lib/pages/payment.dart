@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garage/pages/mypayment.dart';
 
 class Payment extends StatefulWidget {
   @override
@@ -51,18 +52,20 @@ class _PaymentState extends State<Payment> {
                         onPressed: () {
                           showAlertDialog(context);
                         },
-                        child: Text('Check Credit Card Status'),
+                        child: Text('Credit Card Status'),
                         color: Colors.purple,
                         textColor: Colors.white,
                       ),
                     ),
                     // ignore: deprecated_member_use
-                    // FlatButton(
-                    //   onPressed: () {},
-                    //   child: Text('Disagree'),
-                    //   color: Colors.red,
-                    //   textColor: Colors.white,
-                    // )
+                    FlatButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>DarajaFlutter()));
+                      },
+                      child: Text('Mpesa Payment Method'),
+                      color: Colors.red,
+                      textColor: Colors.white,
+                    )
                   ],
                 ),
               )

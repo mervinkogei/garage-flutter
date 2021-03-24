@@ -32,6 +32,8 @@ dependencies:
   google_maps_flutter: ^1.2.0
   # firebase_auth: 0.7.0
   flutter_signin_button: ^1.1.0
+  mpesa_flutter_plugin: ^1.0.0
+  http: ^0.13.1
 
 dev_dependencies:
   flutter_test:
